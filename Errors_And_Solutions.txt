@@ -1,0 +1,135 @@
+1. When you get Table not found error .
+Sol : Check if the addHibernateProperties  statement in configurationfile .check if you have added the propertyhibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
+
+2. You are using JRE instead of JDK
+Sol : Right click on project  build-path - configure build path Libraries Add library JRE System Library
+        Environments select Java SE (required version)
+  
+3. Database already in use 
+Sol :  Close the database open in explorer and also close the one visible in the taskbar.
+
+4. Couldnot publish server configuration for Tomcat server at localhost .Multiple contexts have path to the project
+Sol: You will find  servers folder in the project structure of eclipse open servers folderserver.xml-->search for context.
+
+5. How to add server to eclipse : file-->new-->other-->server
+
+6. javax.servlet.ServletException: Error instantiating servlet class [org.springframework.web.servlet.DispatcherServlet]    
+
+	Sol : Right click project --> properties --> add-->java build path entries -->  maven dependencies - finish  
+
+
+7. UnsatisfiedDependencyException HYPERLINK "https://stackoverflow.com/questions/41566533/unsatisfieddependencyexception-error-creating-bean-with-name-homecontroller": Error creating bean with name ' HYPERLINK "https://stackoverflow.com/questions/41566533/unsatisfieddependencyexception-error-creating-bean-with-name-homecontroller"homeController HYPERLINK "https://stackoverflow.com/questions/41566533/unsatisfieddependencyexception-error-creating-bean-with-name-homecontroller"': Unsatisfied dependency expressed through field ' HYPERLINK "https://stackoverflow.com/questions/41566533/unsatisfieddependencyexception-error-creating-bean-with-name-homecontroller"userDAO HYPERLINK "https://stackoverflow.com/questions/41566533/unsatisfieddependencyexception-error-creating-bean-with-name-homecontroller"'
+Sol : In dispatcher-servlet , add component scan for backend project also.  As we need bean of dao which is in backend project
+
+8. How to add server to maven project .
+Sol : Right click on project build path add library server runtime next select tomcat finish
+Refresh the project.
+
+
+
+
+9. Could not delete E:/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp2/wtpwebapps/Frontend_Project/WEB-INF/lib. May be locked by another process.
+Sol : 
+1- Stop the Server
+2- Clean the Server
+3- Clean Tomcat Work Directory
+
+
+10. Exception processing loader [WebappLoader[StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Frontend_Project]]] background process
+java.lang.IllegalStateException: java.io.FileNotFoundException: E:\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp2\wtpwebapps\Frontend_Project\WEB-INF\lib\antlr-2.7.7.jar (The system cannot find the file specified)
+
+11. WARNING: No mapping found for HTTP request with URI [/Frontend_Project/] in DispatcherServlet with name 'dispatcher'
+Search in DeploymentAssembly if maven project is there.
+
+12.org.apache.jasper.JasperException: java.lang.NullPointerException
+	org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:606)
+	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:482)
+
+Sol : Error tags(form:error) are missing in the jsp file
+
+12. Server Tomcat v9.0 Server at localhost failed to start.
+Sol : to resolve this issue, you have to delete the .snap file located in the directory:
+<workspace-directory>\.metadata\.plugins\org.eclipse.core.resources
+After deleting this file, you could start Eclipse with no problem.
+
+13. Error creating bean org.springframework.security.filterChains
+Sol : Add  use-expressions="true" in security:http tag in spring-security.xml
+
+
+14. SEVERE: Servlet.service() for servlet [dispatcher] in context with path [/ProjectFrontend] threw exception [Request processing failed; nested exception is org.hibernate.hql.internal.ast.QuerySyntaxException: CartItem is not mapped [from CartItem where user.email=? ]] with root cause
+org.hibernate.hql.internal.ast.QuerySyntaxException: CartItem is not mapped [from CartItem where user.email=? ]
+Sol : CartItem.java class is not added in DBCconfiguration.java file in BackendProject.
+
+15. org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartItemController': Injection of autowired dependencies failed; nested exception is java.lang.NoClassDefFoundError: customerOrder
+Sol : Add CustomerOrder class in DBConfiguration file of BackendProject
+
+
+
+
+
+
+
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
